@@ -1,0 +1,50 @@
+seed: null                                          # Définir un seed pour garantir la reproductibilité
+
+data_origin:
+  csv_file: "data/original/data_original.csv"       # Chemin du fichier CSV d'entrée
+  delimiter: ","                                    # Délimiteur utilisé dans le fichier CSV
+  skip_header: 0                                    # Nombre de lignes d'en-tête à ignorer
+
+result:
+  csv_directory: "data/result"
+  jpg_directory: "data/result"
+
+missing_data:
+  proportion: [0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.8]  # Proportion commune des données manquantes 
+  constante: "Yes"
+  
+  columns_cat:                                      # Colonnes catégorielles
+    - column: "Access_to_Counseling"                # Nom de la colonne
+      mechanisms:                                   # Liste des mécanismes d'amputation
+        - "MCAR"   
+        - "MAR"
+        - "MNAR"                             
+      mar_auxiliary_columns:                        # Colonnes auxiliaires pour MAR
+        - "Smoking_Prevalence"                      # Exemple : colonne numérique utilisée comme variable auxiliaire
+      imputation_methods:                           # Méthodes d'imputation
+        - "mode"
+        - "constante"
+        - "KNN"
+        - "ICE"
+        - "MissForest"
+
+  columns_num:                                      # Colonnes numériques
+    - column: "Smoking_Prevalence"                  # Nom de la colonne
+      mechanisms:                                   # Liste des mécanismes d'amputation
+        - "MCAR" 
+        - "MAR"
+        - "MNAR"                                 
+      mar_auxiliary_columns:                        # Colonnes auxiliaires pour MAR
+        - "Age_Group"                               # Exemple : colonne catégorielle utilisée comme variable auxiliaire
+      imputation_methods:                           # Méthodes d'imputation
+        - "mean"
+        - "median"
+        - "SoftImputer"
+        - "KNN"
+        - "ACP"
+        - "ICE"
+        - "MissForest"
+
+evaluation:
+  repetitions_amputation: 100                        # Nombre de répétitions pour l'évaluation de l'amputation
+  repetitions_imputation: 10                         # Nombre de répétitions pour l'évaluation de l'imputation
