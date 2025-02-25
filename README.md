@@ -25,6 +25,7 @@ Le projet permet également d'évaluer la qualité des imputations à travers de
 
 ## Structure du projet
 
+```plaintext
 MissingDataLab/
 ├── config/
 │   └── config.yaml               # Fichier de configuration du projet
@@ -54,7 +55,7 @@ MissingDataLab/
 └── environment.yml               # Fichier de dépendances conda
 └── README.md                     # README Markdown
 └── README.txt                    # Ce fichier
-
+```
 
 ## Installation
 
