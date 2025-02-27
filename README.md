@@ -25,7 +25,7 @@ Le projet permet également d'évaluer la qualité des imputations à travers de
 
 ## Structure du projet
 
-```plaintext
+```tree
 MissingDataLab/
 ├── config/
 │   └── config.yaml               # Fichier de configuration du projet
@@ -59,49 +59,60 @@ MissingDataLab/
 
 ## Installation
 
-1. Cloner le dépôt :
+### 1. Cloner le dépôt :
 
+```bash
    git clone https://github.com/your-username/MissingDataLab.git
    cd MissingDataLab
+```
 
-2. Créer et activer un environnement virtuel :
+### 2. Créer et activer un environnement virtuel :
 
-   a. **Avec venv** :
+   #### a. Avec venv
+
+```bash
       python -m venv venv
       source venv/bin/activate  # Sur Linux/Mac
       .\venv\Scripts\activate   # Sur Windows
       pip install -r requirements.txt
+```
 
-   b. **Avec Conda** :
+   #### b. Avec Conda
+
+```bash
       conda env create -f environment.yml
       conda activate missingdatalab
+```
 
 
 ## Configuration
 
-Le fichier config/config.yaml permet de personnaliser les paramètres du projet :
+Le fichier `config/config.yaml` permet de personnaliser les paramètres du projet :
 
-- data_origin : chemin vers les données d'entrée
-- missing_data : paramètres de génération des données manquantes (proportions, mécanismes, colonnes)
-- imputation_methods : méthodes d'imputation pour chaque colonne
-- evaluation : nombre de répétitions pour l'amputation et l'imputation
+- `data_origin` : chemin vers les données d'entrée
+- `missing_data` : paramètres de génération des données manquantes (proportions, mécanismes, colonnes)
+- `imputation_methods` : méthodes d'imputation pour chaque colonne
+- `evaluation` : nombre de répétitions pour l'amputation et l'imputation
 
 ## Utilisation
 
-1. Lancer le script principal :
+### 1. Lancer le script principal
 
+```bash
    python main.py
+```
 
-2. Résultats générés :
-   - CSV des résultats dans data/result/
-   - Graphiques comparatifs enregistrés sous data/result/results_graph.png
+### 2. Résultats générés
+
+   - CSV des résultats dans `data/result/`
+   - Graphiques comparatifs enregistrés sous `data/result/results_graph.png`
 
 ### Métriques et évaluation
 
 Les performances d'imputation sont évaluées à l'aide de :
 
+- Accuracy pour les variables catégorielles
 - MSE (Mean Squared Error) pour les variables numériques
-- Accuracy (%) pour les variables catégorielles
 - Temps d'exécution et utilisation mémoire
 - Analyse de la variance des valeurs imputées
 
@@ -111,7 +122,7 @@ Les graphiques générés montrent l'impact des différentes méthodes d'imputat
 
 - Les mécanismes des données manquantes (MCAR, MAR, MNAR)
 - Les proportions de valeurs manquantes (ex : 10%, 50%, 80%)
-- Les performances des méthodes (précision/MSE, temps, mémoire, variance)
+- Les performances des méthodes (Accuracy/MSE, temps, mémoire, variance)
 
 # Remerciements
 
