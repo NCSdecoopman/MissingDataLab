@@ -62,8 +62,8 @@ MissingDataLab/
 ### 1. Cloner le dépôt :
 
 ```bash
-   git clone https://github.com/your-username/MissingDataLab.git
-   cd MissingDataLab
+git clone https://github.com/your-username/MissingDataLab.git
+cd MissingDataLab
 ```
 
 ### 2. Créer et activer un environnement virtuel :
@@ -71,17 +71,17 @@ MissingDataLab/
    #### a. Avec venv
 
 ```bash
-      python -m venv venv
-      source venv/bin/activate  # Sur Linux/Mac
-      .\venv\Scripts\activate   # Sur Windows
-      pip install -r requirements.txt
+python -m venv venv
+source venv/bin/activate  # Sur Linux/Mac
+.\venv\Scripts\activate   # Sur Windows
+pip install -r requirements.txt
 ```
 
    #### b. Avec Conda
 
 ```bash
-      conda env create -f environment.yml
-      conda activate missingdatalab
+conda env create -f environment.yml
+conda activate missingdatalab
 ```
 
 
@@ -99,7 +99,7 @@ Le fichier `config/config.yaml` permet de personnaliser les paramètres du proje
 ### 1. Lancer le script principal
 
 ```bash
-   python main.py
+python main.py
 ```
 
 ### 2. Résultats générés
