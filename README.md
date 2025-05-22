@@ -127,3 +127,7 @@ Les graphiques générés montrent l'impact des différentes méthodes d'imputat
 # Remerciements
 
 Merci à tous les contributeurs et utilisateurs pour leur soutien et leurs retours.
+
+# Références
+
+* Documentation disponible : [https://ncsdecoopman.github.io/](https://ncsdecoopman.github.io/)
